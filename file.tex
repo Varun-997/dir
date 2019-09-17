@@ -1,0 +1,238 @@
+\documentclass[12pt]{article}
+\usepackage[top = 1in,bottom=1.6in,left=1in,right=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[english]{babel}
+%\usepackage{url}
+%\usepackage{makeidx}
+\usepackage{graphicx}
+%\usepackage{lmodern}
+%\usepackage{hyperref}
+%\usepackage{url}
+\usepackage{verbatim}
+
+%%%%%%%%%% C code predefined settinngs start here %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.8,0.8,0.8}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+%%%%%%%%% Program code predefined settings end here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+%%%%%%%%% Front Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{\large{Assignment 1}\\
+\vspace{10mm}
+ELP - 718 Telecommunication Software Laboratory \\
+\vspace{5mm}
+Varun Gupta \\
+\vspace{2mm}
+2019BSY7505 \\
+\vspace{2mm}
+2019-2021} \\
+\vspace{10mm}
+\large{A report presented for the assignment on} \\
+\vspace{2mm}
+\large{Basic Programming in C and use of GIT for version control}
+
+\vspace{30mm}
+\includegraphics[scale=0.5]{logo.png} \\
+\vspace{12mm}
+\textbf{Bharti School Of} \\
+\vspace{2mm}
+\textbf{Telecommunication Technology and Management} \\
+\vspace{2mm}
+\textbf{IIT Delhi} \\
+\vspace{2mm}
+\textbf{India} \\
+\vspace{2mm}
+\textbf{August 6, 2019}
+
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+
+%%%%%%% Problem Statement 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problem Statement-1}
+
+\subsection{Problem Statement}
+Consider a square matrix of size N(N x N matrix). Each element is of type unsigned integer. Let ri denote the minimum value in the i-th row, and ci denote the maximum value in i-th column. You have to obtain all such ri s and cis. From now on, let's call the set of all such ris ‘S1’, set of all cis ‘S2’ and set containing both ris and cis as ‘S’. i = 0 to N-1                     \\ (20 min) \\
+You have to do the following operations:\\
+1)  From the set ‘S’, find the prime numbers and display those values on the terminal (10 min)\\
+2)  Consider string D as a concatenation of all the ris and cis e.g. If ‘S’ contains elements {13,10,5,7,10,7}, string D will become 131057107. Now substring will be entered by the user and the program should be able to find the position of the first occurrence of that substring in D. Display that position along with string D on the terminal. If the substring is not found then display the message stating no substring matched.\\         (30 min)\\ 
+3)  Let local minimum and local maximum be defined as follows:\\
+4)  The element at an index i is said to be a local minimum if the S[ i-1 ] > S[ i ] < S[ i+1 ]\\
+5)  The element at an Index i is said to be a local maximum if the S[ i-1 ] < S[ i ] > S[ i+1 ]\\
+         Find the local minima and local maxima and display the index at which they occur in the set ‘S’. If no minima and maxima are found, display the message accordingly.    \\    (30 min)\\
+
+
+
+
+
+
+\
+
+\subsection{Command and Algorithm}
+\verbatiminput{pa1.c}
+
+
+
+
+\subsection{Screenshot}
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.12]{pa1.png}
+\caption{Screenshot1}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+%%%%%%% Problem Statement 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problem Statement-2}
+
+\subsection{Problem Statement}
+Jeevan, Ramesh, Manisha, Parth and little chhaya went for a trip to Rishikesh. After returning from a trip, they are trying hard to split the expenses equally and settle their debts to each other. Help them splitting the expenses so that everyone gets to know how much money they owe to each other. \\
+Note: Above statement is an example use case. Take your time to understand the whole problem and develop your logic first.\\
+
+Use Command line argument to take the Number of members involved in the Trip, Let’s call it N.\\
+\\
+Now enter the names of N people who had gone for the trip.\\
+\\
+In the next few lines, start adding the money paid by each of them in the format shown below:\\
+
+If you want to stop adding expenses, type ‘done’ and no more expenses can be added.    (40 min) \\ 
+
+Now the job is to get the calculations done and display the money each member will get back or has to pay. Ramesh pointed out that all the expenses of Chhaya were paid by her father, Jeevan. So, contribution of two shares should be taken for Jeevan and no share for Chhaya, all others will have the share of one each.\\
+
+You have to make a generalised system for the distribution of expenses. Give the following options to the user and the user distributes expenses by choosing one option:    \\ 
+Split equally:                                    (20 min)\\
+Each member has to contribute equally to the total amount. Use proper calculations and find out how much extra money each member has to give or take back.\\
+Split unequally:                                (30 min)\\
+Here, user will enter the amount of each member’s contribution to the total amount and finally display how much remaining money each member has to pay or has to get back. If the sum of the individual amounts is not equal to the total amount (of all expenses), the error message should be displayed and the amounts have to be entered again \\
+Input format:\\
+Enter contributions to total amount in terms of amount that has to be paid by Jeevan Ramesh Manisha Parth Chhaya: xx xx xx xx xx\\
+Split by percentages:                                (20 min)\\
+Here, user will enter the percentage of each member’s contribution to the total amount and finally display how much remaining money each member has to pay or has to get back. If the sum of the percentages does not match to 100, the error message should be displayed and the percentages have to be entered again\\
+
+Input format:\\
+Enter contributions to total amount in terms of percentage that has to be paid Jeevan Ramesh Manisha Parth Chhaya: 50 10 20 20 0\\
+Split by shares:                                (10 min)\\
+Here, user will enter the share of each member’s contribution to the total amount and finally display how much remaining money each member has to pay or has to get back. \\
+Input format:\\
+Enter contributions to total amount in terms of share for Jeevan Ramesh Manisha Parth Chhaya: 2 1 1 1 0\\
+
+The output of all the above cases should be in the following form:            (10 min)\\
+Jeevan has to pay    : Rs. XXXX\\
+Ramesh has to pay    : Rs. XXXX\\
+Manisha will get back    : Rs. XXXX\\
+Parth has to pay     : Rs. XXXX\\
+Chhaya has to pay    : Rs. XXXX (Here value will be zero in case of 0 share or no share)\\
+\\
+Constraints\\
+2 ≤ N ≤ 7\\
+
+
+
+
+\subsection{Command and Algorithm}
+\verbatiminput{pa2.c}
+
+
+
+
+\subsection{Screenshot}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.12]{pa2.png}
+\caption{Screenshot1}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{thebibliography}{}
+\bibitem{DBHS1} 
+https://www.geeksforgeeks.org/ 
+\bibitem{DBHS1}
+www.overleaf.com
+\bibitem{DBHS1} 
+https://stackoverflow.com/
+\end{thebibliography}{}
+
+\end{document}
